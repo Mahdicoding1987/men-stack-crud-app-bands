@@ -1,0 +1,14 @@
+<body>
+    <!-- update the header -->
+    <h1>Edit <%= band.name %></h1>
+    <form action="/bands/<%=band._id%>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= band.name %>" />
+  
+      <label for="isStillActive">Is still active?</label>
+      <input type="checkbox" name="isStillActive" id="isStillActive" <% if (band.isStillActive) { %>checked<% } %> />
+      <!-- update the button text -->
+      <button type="submit">Update Band</button>
+    </form>
+    <a href="/bands">Back to Bands</a>
+  </body>

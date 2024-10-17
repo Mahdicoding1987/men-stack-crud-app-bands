@@ -11,8 +11,11 @@
     <h1>All Bands</h1>
     <ul>
       <% bands.forEach(band => { %>
-        <li><%= band.name %></li>
+        <li>
+            <a href="/bands/<%= band._id %>"><%= band.name %> </a>
+        </li>
       <% }); %>
     </ul>
+    <a href="/bands/new">Add New band</a>
   </body>
 </html>

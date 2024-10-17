@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= band.name %></title> <!-- Dynamic title based on fruit name -->
+  </head>
+  <body>
+    <h1><%= band.name %></h1> <!-- Display fruit name -->
+    <!-- Add more details about the fruit here -->
+       <!-- Conditional rendering based on fruit's readiness -->
+  <% if (band.isStillActive) { %>
+    <p>This Band is still active!</p>
+  <% } else { %>
+    <p>This band is not active anymore!</p>
+  <% } %>
+
+  <!-- new delete button -->
+<form action="/bands/<%=band._id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete <%= band.name %></button>
+  </form>
+
+  <a href="/bands/<%= band._id %>/edit">Edit <%= band.name %></a>
+
+  <a href="/bands/">Back to Bands</a>
+  </body>
+</html>
