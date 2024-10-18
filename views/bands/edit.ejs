@@ -5,10 +5,21 @@
       <label for="name">Name:</label>
       <input type="text" name="name" value="<%= band.name %>" />
   
+    <div class="checkbox-div">
+
       <label for="isStillActive">Is still active?</label>
       <input type="checkbox" name="isStillActive" id="isStillActive" <% if (band.isStillActive) { %>checked<% } %> />
+    
+    </div>
+    
       <!-- update the button text -->
       <button type="submit">Update Band</button>
     </form>
-    <a href="/bands">Back to Bands</a>
+
+    <div class="index-link-text">
+
+        <a href="/bands">Back to Bands</a>
+
+    </div>
+
   </body>

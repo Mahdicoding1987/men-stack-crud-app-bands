@@ -10,6 +10,8 @@ const mongoose = require("mongoose"); // require package
 const methodOverride = require("method-override"); // new
 const morgan = require("morgan"); //new
 
+const path = require("path");
+
 const app = express();
 
 // Connect to MongoDB using the connection string in the .env file
@@ -25,6 +27,8 @@ const band = require("./models/band.js");
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // new
 app.use(morgan("dev")); //new
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // GET /
 app.get("/", async (req, res) => {

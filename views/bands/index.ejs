@@ -5,17 +5,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
     <title>Bands Index</title>
   </head>
   <body>
-    <h1>All Bands</h1>
+
+<div class="index-header-div">
+
+    <h1>Welcome to the bands app</h1>
+
+    <img
+    class="band-pic1"
+    src="https://www.musiclipse.com/wp-content/uploads/2024/01/Jimi-Hendrix-Experience-Wallpaper-e1713408461812-1021x576.jpg"
+    alt="Jimi Hendrix"
+  />
+  <p>An app for collecting your favorite bands.</p>
+
+</div>
+
     <ul>
       <% bands.forEach(band => { %>
         <li>
-            <a href="/bands/<%= band._id %>"><%= band.name %> </a>
+            <a class="band-cards" href="/bands/<%= band._id %>"><%= band.name %> </a>
         </li>
       <% }); %>
     </ul>
-    <a href="/bands/new">Add New band</a>
+
+    <div class="index-link-text">
+
+        <a class="bands-index-link add-band" href="/bands/new">Add New band</a>
+    
+    </div>
+
   </body>
+
+  <footer>Icons by <a href="https://www.flaticon.com/authors/freepik">Freekpik</a></footer>
+
 </html>
